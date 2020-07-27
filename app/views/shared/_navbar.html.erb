@@ -14,26 +14,29 @@
       <li class="nav-item">
         <%= link_to "Assets", assets_path, class: "nav-link" %>
       </li>
-      <li class="nav-item dropdown">
-        <%= link_to "My Account", "#", class: "nav-link dropdown-toggle", id: "navbarDropdown", role: "button", data: {toggle: "dropdown"}, aria: {haspopup: "true"},  aria: {expanded: "false"} %>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <%= link_to "My Cart", "#", class: "dropdown-item" %>
-          <%= link_to "Purchase History", "#", class: "dropdown-item" %>
-          <div class="dropdown-divider"></div>
-          <%= link_to "Change Password", "#", class: "dropdown-item" %>
-          <%= link_to "Remove Account", "#", class: "dropdown-item" %>
-          <%= link_to "Upload Asset", "#", class: "dropdown-item" %>
-        </div>
-      </li>
-      <li class="nav-item">
-        <%= link_to "Sign up", "#", class: "nav-link" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to "Sign in", "#", class: "nav-link" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to "Sign out", "#", class: "nav-link" %>
-      </li>
+      <% if user_signed_in? %>
+        <li class="nav-item dropdown">
+          <%= link_to "My Account", "#", class: "nav-link dropdown-toggle", id: "navbarDropdown", role: "button", data: {toggle: "dropdown"}, aria: {haspopup: "true"},  aria: {expanded: "false"} %>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <%= link_to "My Cart", "#", class: "dropdown-item" %>
+            <%= link_to "Purchase History", "#", class: "dropdown-item" %>
+            <div class="dropdown-divider"></div>
+            <%= link_to "Change Password", "#", class: "dropdown-item" %>
+            <%= link_to "Remove Account", "#", class: "dropdown-item" %>
+            <%= link_to "Upload Asset", "#", class: "dropdown-item" %>
+          </div>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "nav-link" %>
+        </li>
+      <% else %>
+        <li class="nav-item">
+          <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Sign in", new_user_session_path, class: "nav-link" %>
+        </li>
+      <% end %>
     </ul>
   </div>
 </nav>
