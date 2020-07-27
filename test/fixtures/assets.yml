@@ -5,11 +5,9 @@ one:
   description: MyText
   content: MyText
   price: 1
-  user: one
 
 two:
   title: MyString
   description: MyText
   content: MyText
   price: 1
-  user: two
