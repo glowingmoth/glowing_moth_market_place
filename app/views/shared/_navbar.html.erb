@@ -1,41 +1,38 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Glowing Moth</a>
+  <%= link_to "Glowing Moth", pages_home_path, class: "navbar-brand" %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-        <a class="nav-link" href="#">About</a>
+        <%= link_to "About", pages_about_path, class: "nav-link" %>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Contact</a>
+        <%= link_to "Contact", pages_contact_path, class: "nav-link" %>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Assets</a>
+        <%= link_to "Assets", assets_path, class: "nav-link" %>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          My Account
-        </a>
+        <%= link_to "My Account", "#", class: "nav-link dropdown-toggle", id: "navbarDropdown", role: "button", data: {toggle: "dropdown"}, aria: {haspopup: "true"},  aria: {expanded: "false"} %>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">My Cart</a>
-          <a class="dropdown-item" href="#">Purchase History</a>
+          <%= link_to "My Cart", "#", class: "dropdown-item" %>
+          <%= link_to "Purchase History", "#", class: "dropdown-item" %>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Change Password</a>
-          <a class="dropdown-item" href="#">Remove Account</a>
-          <a class="dropdown-item" href="#">Upload Asset</a>
-          <a class="dropdown-item" href="#">Change Password</a>
+          <%= link_to "Change Password", "#", class: "dropdown-item" %>
+          <%= link_to "Remove Account", "#", class: "dropdown-item" %>
+          <%= link_to "Upload Asset", "#", class: "dropdown-item" %>
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Sign up</a>
+        <%= link_to "Sign up", "#", class: "nav-link" %>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Sign in</a>
+        <%= link_to "Sign in", "#", class: "nav-link" %>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Sign out</a>
+        <%= link_to "Sign out", "#", class: "nav-link" %>
       </li>
     </ul>
   </div>
