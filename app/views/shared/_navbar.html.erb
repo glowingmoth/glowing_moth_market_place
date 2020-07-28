@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <%= link_to "Glowing Moth", pages_home_path, class: "navbar-brand" %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -21,9 +21,9 @@
             <%= link_to "My Cart", "#", class: "dropdown-item" %>
             <%= link_to "Purchase History", "#", class: "dropdown-item" %>
             <div class="dropdown-divider"></div>
-            <%= link_to "Change Password", "#", class: "dropdown-item" %>
-            <%= link_to "Remove Account", "#", class: "dropdown-item" %>
-            <%= link_to "Upload Asset", "#", class: "dropdown-item" %>
+            <%= link_to "Change Password", edit_user_registration_path, class: "dropdown-item" %>
+            <%= link_to "Remove Account", pages_remove_account_path, class: "dropdown-item" %>
+            <%= link_to "Upload Asset", new_asset_path, class: "dropdown-item" %>
           </div>
         </li>
         <li class="nav-item">

@@ -1,33 +1,35 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <p id="notice"><%= notice %></p>
 
-<h1>Assets</h1>
+  <h4 class="text-center mt-2">Assets</h4>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Content</th>
-      <th>Price</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @assets.each do |asset| %>
+  <table>
+    <thead>
       <tr>
-        <td><%= asset.title %></td>
-        <td><%= asset.description %></td>
-        <td><%= asset.content %></td>
-        <td><%= asset.price %></td>
-        <td><%= link_to 'Show', asset %></td>
-        <td><%= link_to 'Edit', edit_asset_path(asset) %></td>
-        <td><%= link_to 'Destroy', asset, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Content</th>
+        <th>Price</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @assets.each do |asset| %>
+        <tr>
+          <td><%= asset.title %></td>
+          <td><%= asset.description %></td>
+          <td><%= asset.content %></td>
+          <td><%= asset.price %></td>
+          <td><%= link_to 'Show', asset %></td>
+          <td><%= link_to 'Edit', edit_asset_path(asset) %></td>
+          <td><%= link_to 'Destroy', asset, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Asset', new_asset_path %>
+  <br>
+
+  <%= link_to 'New Asset', new_asset_path %>
+</div>

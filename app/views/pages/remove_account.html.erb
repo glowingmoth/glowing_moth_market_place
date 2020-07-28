@@ -1,0 +1,14 @@
+<div class= "container">
+    <h4 class="text-center">Remove Account</h4>
+    <p>
+    Sorry to see you go.<br />
+    You may remove your account from here by clicking the button Remove Account below. 
+    By removing your account, all your details will be permenantly removed from the database and you will no 
+    longer be able to retrieve anything that was stored like your purchase history, also you will not be 
+    able to purchase anything on Glowing Moth. 
+
+    We will miss you!
+    </p>
+
+    <%= button_to "Remove Account", user_registration_path, data: { confirm: "Are you sure?" }, method: :delete %>
+</div>

@@ -1,24 +1,26 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @asset.title %>
-</p>
+  <p>
+    <strong>Title:</strong>
+    <%= @asset.title %>
+  </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @asset.description %>
-</p>
+  <p>
+    <strong>Description:</strong>
+    <%= @asset.description %>
+  </p>
 
-<p>
-  <strong>Content:</strong>
-  <%= @asset.content %>
-</p>
+  <p>
+    <strong>Content:</strong>
+    <%= @asset.content %>
+  </p>
 
-<p>
-  <strong>Price:</strong>
-  <%= @asset.price %>
-</p>
+  <p>
+    <strong>Price:</strong>
+    <%= @asset.price %>
+  </p>
 
-<%= link_to 'Edit', edit_asset_path(@asset) %> |
-<%= link_to 'Back', assets_path %>
+  <%= link_to 'Edit', edit_asset_path(@asset) %> |
+  <%= link_to 'Back', assets_path %>
+</div>

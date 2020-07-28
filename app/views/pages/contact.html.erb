@@ -1,2 +1,29 @@
-<h1>Pages#contact</h1>
-<p>Find me in app/views/pages/contact.html.erb</p>
+<div class="container">
+    <h4 class="text-center mt-2">Contact</h4>
+    <p>
+        It is a long established fact that a reader will be distracted by the readable content of 
+        a page when looking at its layout.
+    </p>
+    <div class="contact-section">
+        <form class="contact-form" action="contact.html" method="post">
+
+            <div class="form-group field">
+                <label for="name">Name</label>
+                <input type="text" class="contact-form-text form-control" id="name">
+            </div>
+
+            <div class="form-group field">
+                <label for="email">Email</label>
+                <input type="email" class="contact-form-text form-control" id="name">
+            </div>
+
+            <div class="form-group field">
+            <label for="email">Enquiry</label>
+                <textarea  class="contact-form-text form-control" rows="5"></textarea><br>
+            </div>
+
+            <button>Send</button>
+            
+        </form>
+    </div>
+</div>

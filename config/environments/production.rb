@@ -21,10 +21,13 @@ Rails.application.configure do
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
   config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
-
+ 
+  #Change a rails reserved word assets to use asset/s in my market place app
+  config.assets.prefix = '/assetz'
+  
   # Compress CSS using a preprocessor.
   # config.assets.css_compressor = :sass
-
+  
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = false
 
