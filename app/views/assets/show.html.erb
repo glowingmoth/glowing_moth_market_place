@@ -21,6 +21,14 @@
     <%= @asset.price %>
   </p>
 
+  <p>
+    <strong>Pictures:</strong>
+    <% @asset.pictures.each do |pic| %>
+    <%= image_tag pic, width: 300 %>
+    <% end %>
+  
+  </p>
+
   <%= link_to 'Edit', edit_asset_path(@asset) %> |
   <%= link_to 'Back', assets_path %>
 </div>
