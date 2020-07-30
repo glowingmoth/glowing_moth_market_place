@@ -25,7 +25,12 @@ class AssetsController < ApplicationController
   # POST /assets.json
   def create
     @asset = Asset.new(asset_params)
-
+    @asset.user_id = current_user.id
+    # if params[:asset][:pictures].present?
+    #   params[:asset][:pictures].each do |pic|
+    #     @asset.pictures.attach(pic)
+    #   end
+    # end
     respond_to do |format|
       if @asset.save
         format.html { redirect_to @asset, notice: 'Asset was successfully created.' }
@@ -69,6 +74,6 @@ class AssetsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def asset_params
-      params.require(:asset).permit(:title, :description, :content, :price)
+      params.require(:asset).permit(:title, :description, :content, :price, :zip_file, pictures: [])
     end
 end

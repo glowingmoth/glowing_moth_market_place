@@ -21,6 +21,17 @@
     <%= @asset.price %>
   </p>
 
+  <p>
+    <strong>Pictures:</strong>
+    <% @asset.pictures.each do |pic| %>
+    <%= image_tag pic, width: 300 %>
+    <% end %>
+  </p>
+
+  <% if @asset.zip_file.attached? %>
+    <%= link_to 'Download', url_for(@asset.zip_file) %>
+  <% end %>
+
   <%= link_to 'Edit', edit_asset_path(@asset) %> |
   <%= link_to 'Back', assets_path %>
 </div>
