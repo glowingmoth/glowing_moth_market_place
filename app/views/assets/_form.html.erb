@@ -31,13 +31,13 @@
     <%= form.number_field :price, class: "form-control" %>
   </div>
 
-  <% if @asset.pictures.attached? %>
-    <% @asset.pictures.each do |pic| %>
-      <%= pic.filename %>
-    <% end %>
-  <% else %>
-    <%= form.file_field :pictures %>
-  <% end %>
+  <%# if @asset.pictures.attached? %>
+    <%# @asset.pictures.each do |pic| %>
+      <%#= pic.filename %>
+    <%# end %>
+  <%# else %>
+    <%#= form.file_field :pictures %>
+  <%# end %>
   
 
   <div class="field form-group ">
@@ -46,7 +46,7 @@
     <%= form.file_field :pictures, multiple: true %>         
   </div>
 
-  <div class="field form-group ">
+  <div class="field form-group mt-5">
     <%= form.label :zip_file %>
     <br />
     <%= form.file_field :zip_file %>         

@@ -31,8 +31,6 @@ class AssetsController < ApplicationController
     #     @asset.pictures.attach(pic)
     #   end
     # end
-    #@asset.pictures.attach(params[:pictures])
-    @asset.zip_file.attach(params[:zip_file])
     respond_to do |format|
       if @asset.save
         format.html { redirect_to @asset, notice: 'Asset was successfully created.' }
@@ -76,6 +74,6 @@ class AssetsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def asset_params
-      params.require(:asset).permit(:title, :description, :content, :price, pictures: [], :zip_file)
+      params.require(:asset).permit(:title, :description, :content, :price, :zip_file, pictures: [])
     end
 end
