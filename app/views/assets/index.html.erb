@@ -1,4 +1,21 @@
 <div class="container">
+
+<div class="row">
+  <% @assets.each do |asset| %>
+    <%= link_to asset do %>
+    <div class="col-sm-2 col-md-3 col-lg-4">
+      <div class="card" style="width: 300px;">
+        <%= image_tag asset.pictures[0], width: 100, class: "card-img-top" %>
+        <div class="card-body">
+          <h5 class="card-title"><%= asset.title %></h5>
+          <p class="card-text"><%= "$#{asset.price}" %></p>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  <% end %>
+</div>
+
   <p id="notice"><%= notice %></p>
 
   <h4 class="text-center mt-2">Assets</h4>
@@ -15,6 +32,7 @@
     </thead>
 
     <tbody>
+    <div>
       <% @assets.each do |asset| %>
         <tr>
           <td><%= asset.title %></td>
@@ -27,6 +45,7 @@
           <td><%= link_to 'Destroy', asset, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>
+      </div>
     </tbody>
   </table>
 

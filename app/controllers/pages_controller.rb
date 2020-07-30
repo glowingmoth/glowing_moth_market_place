@@ -15,4 +15,8 @@ class PagesController < ApplicationController
 
   def remove_account
   end
+
+  def bootstrap
+  end
+  
 end
