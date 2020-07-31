@@ -1,14 +1,16 @@
-<div class="container">
+<div class="container mx-auto">
 
-<div class="row">
+<h4 class="text-center mt-2">Assets</h4>
+
+<div class="row row-cols-2 row-cols-md-3 row-cols-lg-4">
   <% @assets.each do |asset| %>
     <%= link_to asset do %>
-    <div class="col-sm-2 col-md-3 col-lg-4">
-      <div class="card" style="width: 300px;">
+    <div class="col">
+      <div class="card border-0 mx-auto asset-card">
         <%= image_tag asset.pictures[0], width: 100, class: "card-img-top" %>
-        <div class="card-body">
-          <h5 class="card-title"><%= asset.title %></h5>
-          <p class="card-text"><%= "$#{asset.price}" %></p>
+        <div class="card-body mb-5 p-0">
+          <h5 class="card-title text-dark "><%= asset.title %></h5>
+          <p class="card-text text-dark "><%= "$#{asset.price}" %></p>
         </div>
       </div>
     </div>
@@ -18,9 +20,9 @@
 
   <p id="notice"><%= notice %></p>
 
-  <h4 class="text-center mt-2">Assets</h4>
+  
 
-  <table>
+  <!--<table>
     <thead>
       <tr>
         <th>Title</th>
@@ -49,7 +51,7 @@
     </tbody>
   </table>
 
-  <br>
+  --><br>
 
   <%= link_to 'New Asset', new_asset_path %>
 </div>
