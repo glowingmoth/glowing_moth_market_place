@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_29_011652) do
+ActiveRecord::Schema.define(version: 2020_08_03_061854) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,6 +54,8 @@ ActiveRecord::Schema.define(version: 2020_07_29_011652) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "asset_id", null: false
+    t.index ["asset_id"], name: "index_purchases_on_asset_id"
     t.index ["user_id"], name: "index_purchases_on_user_id"
   end
 
@@ -72,5 +74,6 @@ ActiveRecord::Schema.define(version: 2020_07_29_011652) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "assets", "users"
+  add_foreign_key "purchases", "assets"
   add_foreign_key "purchases", "users"
 end
