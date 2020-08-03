@@ -15,3 +15,18 @@ require("channels")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+
+$(document).on('turbolinks:load', function() {
+
+    $("#big-image img:eq(0)").nextAll().hide();
+    $("#small-images a").on('click', function(e){
+    e.preventDefault();
+    var index = $(this).index();
+    console.log('index:', index)
+    $("#big-image img").eq(index).show().siblings().hide();
+    });
+   
+
+})
+
+
