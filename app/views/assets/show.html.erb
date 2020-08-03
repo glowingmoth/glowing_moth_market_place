@@ -1,17 +1,16 @@
 <div class="container">
-  <p id="notice"><%= notice %></p>
+  <p id="notice" class="text-center mt-5"><%= notice %></p>
 
-    
+   <h4 class="text-center"><%= @asset.title %></h4> 
 
   <div class="row">
     <div class="col-12 col-lg-8">
-      <h4 class="text-center"><%= @asset.title %></h4>
       <div id="big-image" class="mt-5 mb-2">
         <% @asset.pictures.each do |pic| %>
           <%= image_tag pic %>
         <% end %>
       </div>
-      <div id="small-images" >
+      <div id="small-images" class="mb-5" >
         <% @asset.pictures.each do |pic| %>
           <%= link_to "#" do %>
             <%= image_tag pic, width: 80, class: "mt-2" %>
@@ -36,13 +35,14 @@
         <strong>Content:</strong>
       </p>
       <p class="asset-detail"><%= @asset.content %></p>
-<% if user_signed_in? %>
-    <% if @asset.zip_file.attached? %>
-      <%= link_to 'Download', url_for(@asset.zip_file), class: "btn btn-primary" %>
-    <% end %>
-
-    <%= link_to 'Edit', edit_asset_path(@asset), class: "btn btn-success" %>
-  <% end %>    
+    <% if user_signed_in? %>
+      <% if @asset.zip_file.attached? %>
+        <%= link_to 'Download', url_for(@asset.zip_file), class: "btn btn-primary" %>
+      <% end %>
+      <% if current_user.has_role? :admin %>
+        <%= link_to 'Edit', edit_asset_path(@asset), class: "btn btn-success" %>
+      <% end %>
+    <% end %>    
     </div>
   </div>
  
