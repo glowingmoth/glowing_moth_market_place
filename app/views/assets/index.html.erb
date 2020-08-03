@@ -9,7 +9,7 @@
       <div class="card border-0 mx-auto asset-card">
         <%= image_tag asset.pictures[0], width: 100, class: "card-img-top" %>
         <div class="card-body mb-5 p-0">
-          <h5 class="card-title text-dark "><%= asset.title %></h5>
+          <h6 class="card-title text-dark "><%= truncate asset.title, length: 16 %></h6>
           <p class="card-text text-dark "><%= "$#{asset.price}" %></p>
         </div>
       </div>

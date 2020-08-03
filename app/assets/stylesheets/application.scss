@@ -18,4 +18,11 @@
     text-decoration: none;
   }
 
-  
+  #big-image img {
+    width: 100%;
+    max-width: 800px;
+  }
+
+  .asset-detail {
+    white-space: pre;
+  }
