@@ -10,27 +10,29 @@ class AssetsController < ApplicationController
   # GET /assets/1
   # GET /assets/1.json
   def show
-    session = Stripe::Checkout::Session.create(
-        payment_method_types: ['card'],
-        customer_email: current_user.email,
-        line_items: [{
-            name: @asset.title,
-            description: @asset.description,
-            amount: @asset.price * 100,
-            currency: 'aud',
-            quantity: 1,
-        }],
-        payment_intent_data: {
-            metadata: {
-                user_id: current_user.id,
-                asset_id: @asset.id
-            }
-        },
-        success_url: "#{root_url}payments/success?userId=#{current_user.id}&assetId=#{@asset.id}",
-        cancel_url: "#{root_url}assets"
-    )
+    if user_signed_in?
+      session = Stripe::Checkout::Session.create(
+          payment_method_types: ['card'],
+          customer_email: current_user.email,
+          line_items: [{
+              name: @asset.title,
+              description: @asset.description,
+              amount: @asset.price * 100,
+              currency: 'aud',
+              quantity: 1
+          }],
+          payment_intent_data: {
+              metadata: {
+                  user_id: current_user.id,
+                  asset_id: @asset.id
+              }
+          },
+          success_url: "#{root_url}assets/payment_success?userId=#{current_user.id}&assetId=#{@asset.id}&price=#{@asset.price}",
+          cancel_url: "#{root_url}assets/payment_failed?assetId=#{@asset.id}"
+      )
 
-    @session_id = session.id
+      @session_id = session.id
+    end
 end
 
   # GET /assets/new
@@ -87,6 +89,15 @@ end
     end
   end
 
+  def payment_success
+    Purchase.create(asset_id: params[:assetId].to_i, user_id: params[:userId].to_i, price: params[:price].to_i)
+    redirect_to asset_path(params[:assetId].to_i), notice: 'Payment was successful.'
+  end
+
+  def payment_failed
+    redirect_to asset_path(params[:assetId].to_i), notice: 'Payment failed.'
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_asset
@@ -97,4 +108,5 @@ end
     def asset_params
       params.require(:asset).permit(:title, :description, :content, :price, :zip_file, pictures: [])
     end
+
 end

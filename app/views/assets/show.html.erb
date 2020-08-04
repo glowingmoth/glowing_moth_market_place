@@ -35,11 +35,11 @@
         <strong>Content:</strong>
       </p>
       <p class="asset-detail"><%= @asset.content %></p>
-    <% if user_signed_in? %> 
+    <% if user_signed_in? %>
       <% if @asset.has_purchased?(current_user.id) %>
         <%= link_to 'Download', url_for(@asset.zip_file), class: "btn btn-primary" %>
       <% else %>
-        <%= link_to 'Buy Now', data: {stripe: "payment"}, class: "btn btn-info" %>
+        <%= button_tag 'Buy Now', type: "button", data: {stripe: "payment"}, class: "btn btn-info" %>
         <script src="https://js.stripe.com/v3/"></script>
 
         <script>
@@ -61,7 +61,7 @@
       <% end %>
     <% else %>
      <%= link_to 'Buy Now', new_user_session_path, class: "btn btn-info" %> 
-    <% end %>    
+    <% end %>
     </div>
   </div>
 </div>
