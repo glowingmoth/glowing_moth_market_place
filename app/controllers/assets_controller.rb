@@ -10,7 +10,28 @@ class AssetsController < ApplicationController
   # GET /assets/1
   # GET /assets/1.json
   def show
-  end
+    session = Stripe::Checkout::Session.create(
+        payment_method_types: ['card'],
+        customer_email: current_user.email,
+        line_items: [{
+            name: @asset.title,
+            description: @asset.description,
+            amount: @asset.price * 100,
+            currency: 'aud',
+            quantity: 1,
+        }],
+        payment_intent_data: {
+            metadata: {
+                user_id: current_user.id,
+                asset_id: @asset.id
+            }
+        },
+        success_url: "#{root_url}payments/success?userId=#{current_user.id}&assetId=#{@asset.id}",
+        cancel_url: "#{root_url}assets"
+    )
+
+    @session_id = session.id
+end
 
   # GET /assets/new
   def new
