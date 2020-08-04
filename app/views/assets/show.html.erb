@@ -35,17 +35,24 @@
         <strong>Content:</strong>
       </p>
       <p class="asset-detail"><%= @asset.content %></p>
-    <% if user_signed_in? %>
-      <% if @asset.zip_file.attached? %>
+    <% if user_signed_in? %> 
+      <% if @asset.has_purchased?(current_user.id) %>
         <%= link_to 'Download', url_for(@asset.zip_file), class: "btn btn-primary" %>
+      <% else %>
+        <%= link_to 'Buy Now', "#", class: "btn btn-info" %>
       <% end %>
       <% if current_user.has_role? :admin %>
         <%= link_to 'Edit', edit_asset_path(@asset), class: "btn btn-success" %>
       <% end %>
+    <% else %>
+     <%= link_to 'Buy Now', new_user_session_path, class: "btn btn-info" %> 
     <% end %>    
     </div>
   </div>
- 
+
+
+
+
   
   
 
