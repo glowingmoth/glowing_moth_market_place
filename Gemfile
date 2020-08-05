@@ -58,3 +58,5 @@ gem 'devise'
 gem "rolify"
 
 gem "stripe", "~> 5.22"
+
+gem 'cancancan'
