@@ -1,4 +1,6 @@
 class AssetsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :edit, :update, :create, :destroy, :payment_success, :payment_failed]
+  #need one more validation if user is admin , than can allow for certain actions.
   before_action :set_asset, only: [:show, :edit, :update, :destroy]
 
   # GET /assets
@@ -33,7 +35,7 @@ class AssetsController < ApplicationController
 
       @session_id = session.id
     end
-end
+  end
 
   # GET /assets/new
   def new
@@ -42,6 +44,7 @@ end
 
   # GET /assets/1/edit
   def edit
+    
   end
 
   # POST /assets
