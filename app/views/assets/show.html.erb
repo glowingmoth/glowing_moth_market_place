@@ -58,6 +58,7 @@
       <% end %>
       <% if current_user.has_role? :admin %>
         <%= link_to 'Edit', edit_asset_path(@asset), class: "btn btn-success" %>
+        <%= link_to 'Delete', asset_path(@asset), method: :delete, class: "btn btn-danger" %>
       <% end %>
     <% else %>
      <%= link_to 'Buy Now', new_user_session_path, class: "btn btn-info" %> 

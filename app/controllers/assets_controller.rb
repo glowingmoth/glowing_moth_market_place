@@ -95,7 +95,7 @@ end
   end
 
   def payment_failed
-    redirect_to asset_path(params[:assetId].to_i), notice: 'Payment failed.'
+    redirect_to asset_path(params[:assetId].to_i), notice: 'Payment.'
   end
 
   private
