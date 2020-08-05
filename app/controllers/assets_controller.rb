@@ -1,6 +1,6 @@
 class AssetsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :update, :create, :destroy, :payment_success, :payment_failed]
-  #need one more validation if user is admin , than can allow for certain actions.
+  before_action :admin_check, only: [:new, :edit, :update, :create, :destroy]
   before_action :set_asset, only: [:show, :edit, :update, :destroy]
 
   # GET /assets
@@ -44,7 +44,6 @@ class AssetsController < ApplicationController
 
   # GET /assets/1/edit
   def edit
-    
   end
 
   # POST /assets
@@ -110,6 +109,12 @@ class AssetsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def asset_params
       params.require(:asset).permit(:title, :description, :content, :price, :zip_file, pictures: [])
+    end
+
+    def admin_check
+      if !(current_user.has_role? :admin)
+        redirect_to pages_home_path, alert: 'You don\'t have permissions.'
+      end
     end
 
 end
