@@ -8,5 +8,5 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   has_many :purchases
   has_many :assets, dependent: :destroy
-  validates :name, presence: true
+  validates :name, presence: true, length: {maximum: 100}
   end
