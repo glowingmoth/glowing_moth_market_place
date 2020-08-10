@@ -25,6 +25,7 @@ class PagesController < ApplicationController
 
   def customer_records
     @purchases = Purchase.all
+    @users = User.all
   end
   
 end
