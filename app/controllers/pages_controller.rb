@@ -21,6 +21,9 @@ class PagesController < ApplicationController
 
   def purchase_history
     @purchase = Purchase.where(user_id: current_user.id)
+  end
+
+  def customer_records
   
   end
   
