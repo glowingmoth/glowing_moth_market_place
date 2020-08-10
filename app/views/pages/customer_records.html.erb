@@ -69,7 +69,7 @@
                             <div class="col-5">
                                 <strong>Purchase ID</strong>
                             </div>
-                            <div class="col-3">
+                            <div class="col-3 px-0">
                                 <strong>Date</strong>
                             </div>
                             <div class="col-4">
@@ -83,8 +83,8 @@
                                 <div class="col-5">
                                     <%= "\##{purchase.id}" %>
                                 </div>
-                                <div class="col-3">
-                                    <%= purchase.created_at.strftime('%b %e, %Y') %>
+                                <div class="col-3 px-0">
+                                    <%= purchase.created_at.strftime('%e/%m/%y') %>
                                 </div>
                                 <div class="col-4">
                                     <%= "$#{purchase.price}" %>
