@@ -19,7 +19,7 @@
           <%= link_to "My Account", "#", class: "nav-link dropdown-toggle", id: "navbarDropdown", role: "button", data: {toggle: "dropdown"}, aria: {haspopup: "true"},  aria: {expanded: "false"} %>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <%= link_to "My Cart", "#", class: "dropdown-item" %>
-            <%= link_to "Purchase History", "#", class: "dropdown-item" %>
+            <%= link_to "Purchase History", pages_purchase_history_path, class: "dropdown-item" %>
             <div class="dropdown-divider"></div>
             <%= link_to "Change Password", edit_user_registration_path, class: "dropdown-item" %>
             <%= link_to "Remove Account", pages_remove_account_path, class: "dropdown-item" %>

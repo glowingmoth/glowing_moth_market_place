@@ -17,8 +17,7 @@ https://github.com/glowingmoth/glowing_moth_market_place
 - **Sitemap**
 - **Screenshots**
 - **Target audience**
-- **Tech stack** - HTML, CSS, Ruby, Ruby on Rails, Javascript, Amazon Web Services, Heroku, Visual Studio Code, Figma, Lucid Charts, Git, Github.
-
+- **Tech stack** - HTML, CSS, Bootstrap, Ruby, Ruby on Rails, Javascript, Amazon Web Services S3, Heroku, Visual Studio Code, Figma, Lucid Charts, Stripe, Git, Github.
 
 ## R12 - User stories for your app<br>
 
@@ -29,6 +28,8 @@ https://github.com/glowingmoth/glowing_moth_market_place
 ## R15 - Explain the different high-level components (abstractions) in your app<br>
 
 ## R16 - Detail any third party services that your app will use<br>
+- Amazon Web Services S3
+- Stripe
 
 ## R17 - Describe your projects models in terms of the relationships (active record associations) they have with each other<br>
 

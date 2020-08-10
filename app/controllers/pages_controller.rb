@@ -18,5 +18,10 @@ class PagesController < ApplicationController
 
   def bootstrap
   end
+
+  def purchase_history
+    @purchase = Purchase.where(user_id: current_user.id)
+  
+  end
   
 end

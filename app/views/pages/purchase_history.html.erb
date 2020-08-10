@@ -1,0 +1,14 @@
+<div class="container">
+    <h4 class="text-center mt-2 mb-5">Purchase History</h4>
+
+    <% @purchase.each do |purchase| %>   
+        <p><strong>Date </strong><%= purchase.created_at.strftime('%b %e, %Y') %></p>
+        <p><strong>Purchase ID </strong><%= "\##{purchase.id}" %></p>
+        <p><strong>Amount </strong></p>
+        <p><strong>Title </strong><%= "#{purchase.asset.title}" %></p>
+        <p><strong>Description </strong><br/><%= "#{purchase.asset.description}" %></p>
+        <p class="asset-detail"><strong>Content </strong><br/><%= "#{purchase.asset.content}" %></p>
+        <hr/>
+    <% end %>
+
+</div>
