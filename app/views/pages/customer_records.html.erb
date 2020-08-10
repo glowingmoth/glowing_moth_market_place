@@ -1,0 +1,104 @@
+<div class="container">
+    <h4 class="text-center mt-2 mb-5">Customer Records</h4>
+    <div class="d-none d-md-block">
+        <div class="row" style="word-wrap: break-word;">
+            <div class="col-2">
+                <strong>Purchase ID</strong>
+            </div>
+            <div class="col-3">
+                <strong>Name</strong>
+            </div>
+            <div class="col-3">
+                <strong>Email</strong>
+            </div> 
+            <div class="col-2">
+                <strong>Date</strong>
+            </div> 
+            <div class="col-2">
+                <strong>Amount</strong>
+            </div>  
+        </div>
+        <hr class="mt-4 mb-2"/>
+        <% if @purchases.length > 0 %>
+            <% @purchases.each do |purchase| %>
+                <div class="row" style="word-wrap: break-word;">
+                    <div class="col-2 record-border-left">
+                        <%= "\##{purchase.id}" %>
+                    </div>
+                    <div class="col-3 record-border-left">
+                        <%= "#{purchase.user.name}" %>
+                    </div>
+                    <div class="col-3 record-border-left">
+                        <%= "#{purchase.user.email}" %>
+                    </div> 
+                    <div class="col-2 record-border-left">
+                        <%= purchase.created_at.strftime('%b %e, %Y') %>
+                    </div> 
+                    <div class="col-2 record-border-left record-border-right">
+                        <%= "$#{purchase.price}" %>
+                    </div>  
+                </div>
+                <hr class="my-2"/>
+            <% end %>
+        <% else %>
+            <p>No customer records to display.</p>
+        <% end %>
+    </div>
+    <div class="d-md-none">
+        <div class="row" style="word-wrap: break-word;">
+            <div class="col-4">
+                <strong>Name</strong>
+            </div>
+            <div class="col-8">
+                <strong>Email</strong>
+            </div>
+        </div>
+        <% if @users.length > 0 %>
+            <% @users.each do |user| %>
+                <div class="row" style="word-wrap: break-word;" roll="button" href="<%= "#expandRecord#{user.id}" %>" data-toggle="collapse" aria-expanded="false" aria-controls="<%= "expandRecord#{user.id}" %>">
+                    <div class="col-4 record-border-left">
+                        <%= "#{user.name}" %>
+                    </div>
+                    <div class="col-8 record-border-left">
+                        <%= "#{user.email}" %>
+                    </div>   
+                </div>
+                <div class="collapse" id= "<%= "expandRecord#{user.id}" %>">
+                    <% if user.purchases.length > 0 %>
+                        <div class="row" style="word-wrap: break-word;">
+                            <div class="col-5">
+                                <strong>Purchase ID</strong>
+                            </div>
+                            <div class="col-3 px-0">
+                                <strong>Date</strong>
+                            </div>
+                            <div class="col-4">
+                                <strong>Amount</strong>
+                            </div>
+                        </div>
+                        
+                        
+                        <% user.purchases.each do |purchase| %>
+                            <div class="row">
+                                <div class="col-5">
+                                    <%= "\##{purchase.id}" %>
+                                </div>
+                                <div class="col-3 px-0">
+                                    <%= purchase.created_at.strftime('%e/%m/%y') %>
+                                </div>
+                                <div class="col-4">
+                                    <%= "$#{purchase.price}" %>
+                                </div>
+                            </div>  
+                        <% end %>
+                    <% else %>
+                        <p>No purchase history to display.</p>
+                    <%end %>  
+                </div>
+                <hr class="my-2"/>
+            <% end %>
+        <% else %>
+            <p>No customer records to display.</p>
+        <% end %>
+    </div>   
+</div>

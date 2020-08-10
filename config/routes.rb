@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'pages/about'
   get 'pages/contact'
   get 'pages/purchase_history'
+  get 'pages/customer_records'
   get 'pages/remove_account'
   get 'assets/payment_success'
   get 'assets/payment_failed'
