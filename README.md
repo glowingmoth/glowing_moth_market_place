@@ -16,10 +16,20 @@ https://github.com/glowingmoth/glowing_moth_market_place
 - **Functionality / features** - Users have the ability to sign up and purchase assets. They can also change their password and or remove their account. There is a contact form to contact myself the admin. As an admin I can set what users have access to in terms of menu items. Currently as an admin I have the ability to upload assets that contain text descriptions, images and an attached file in the form of a zip, as well as being able to edit or delete an asset from being listed. After a user purchases an asset the can download the asset. The application is also mobile and tablet friendly.
 - **Sitemap**
 - **Screenshots**
-- **Target audience**
+- **Target audience** - This marketplace app is aimed at professional independent game developers or any other professionals in realtime computer graphics needing 3d assets for their projects. It's also aimed at hobbyists.
 - **Tech stack** - HTML, CSS, Bootstrap, Ruby, Ruby on Rails, Javascript, Amazon Web Services S3, Heroku, Visual Studio Code, Figma, Lucid Charts, Stripe, Git, Github.
 
 ## R12 - User stories for your app<br>
+- As an administrator I want to upload 3d assets and games so I can sell them.
+- As an administrator I want to edit any content currently listed for sale, so I can fix/update an item.
+- As a visitor or registered user I want to click on an item, so I can see detailed information about.
+- As a registered user I want to change my password, so I can keep my account secure.
+- As a visitor and registered user, I want to see information about glowing moth, so I can learn more about the company.
+- As a visitor I want to signup so I can purchase items.
+- As a visitor I want to view all assets and games, so I can see what's available.
+- As a registered user I want to click buy, so I can purchase 3d assets and games.
+- As a registered user I want to see my purchase history, so I can keep track of my purchases.
+- As a visitor or registered user I want to be able to contact the site admin, so I can ask any questions.
 
 ## R13 - Wireframes for your app<br>
 
