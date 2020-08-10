@@ -20,11 +20,11 @@ class PagesController < ApplicationController
   end
 
   def purchase_history
-    @purchase = Purchase.where(user_id: current_user.id)
+    @purchases = Purchase.where(user_id: current_user.id)
   end
 
   def customer_records
-  
+    @purchases = Purchase.all
   end
   
 end

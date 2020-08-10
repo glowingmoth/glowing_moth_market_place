@@ -1,0 +1,45 @@
+<div class="container">
+    <h4 class="text-center mt-2 mb-5">Customer Records</h4>
+    <div class="row">
+            <div class="col-2">
+                <strong>Purchase ID</strong>
+            </div>
+            <div class="col-3">
+                <strong>Name</strong>
+            </div>
+            <div class="col-3">
+                <strong>Email</strong>
+            </div> 
+            <div class="col-2">
+                <strong>Date</strong>
+            </div> 
+            <div class="col-1">
+                <strong>Amount</strong>
+            </div>  
+        </div>
+         <hr class="mt-4 mb-2"/>
+    <% if @purchases.length > 0 %>
+        <% @purchases.each do |purchase| %>
+        <div class="row">
+            <div class="col-2 record-border-left">
+                <%= "\##{purchase.id}" %>
+            </div>
+            <div class="col-3 record-border-left">
+                <%= "#{purchase.user.name}" %>
+            </div>
+            <div class="col-3 record-border-left">
+                <%= "#{purchase.user.email}" %>
+            </div> 
+            <div class="col-2 record-border-left">
+                <%= purchase.created_at.strftime('%b %e, %Y') %>
+            </div> 
+            <div class="col-1 record-border-left record-border-right">
+                <%= "$#{purchase.price}" %>
+            </div>  
+        </div>
+        <hr class="my-2"/>
+        <% end %>
+    <% else %>
+        <p>No customer history to display.</p>
+    <% end %>
+</div>
