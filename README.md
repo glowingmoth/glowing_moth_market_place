@@ -129,3 +129,22 @@ This holds each user both admin and all cutomer data.
 - password<br>
 
 ## R20 - Describe the way tasks are allocated and tracked in your project<br>
+Project managment and task allocation utilised Trello where I broke things down into documentation, user stories, to do, do and done. I also found it helpful to implement colour coded labels to get a nice quick visual idea of priority tasks like MVP's.<br>
+<br>
+The first thing I began doing was to list things that needed to be done like starting the documentation and creatiin user stories as well as seting up a repository etc.
+![Glowing Moth Marketplace - Trello](docs/Trello_1.png)
+<br>
+<br>
+
+Next I continued to refine my ideas and ERD and sitemaps as well as starting to lay down the the basic source code for each model in the ERD. This was also the point where site layout and bootsrap were worked on.
+![Glowing Moth Marketplace - Trello](docs/Trello_2.png)
+<br>
+<br>
+
+Around this point I started to get an idea of scope and what features that were originally planned for the app were mostly likley not going to make it into the final product. I mangaged to implement several gems that helped with authentication authorisation, payments and image uploads etc. 
+![Glowing Moth Marketplace - Trello](docs/Trello_3.png)
+<br>
+<br>
+
+The final touches were things like validations and small tweaks here and there along with deployment to heroku. The last thing was to fill the database with fake users and complete the README.
+![Glowing Moth Marketplace - Trello](docs/Trello_4.png)
