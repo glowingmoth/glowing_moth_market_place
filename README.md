@@ -47,9 +47,24 @@ Glowing Moth Maketplace App Screenshots
 ![Glowing Moth Marketplace Screenshots](docs/Wireframe.png)
 
 ## R14 - An ERD for your app<br>
+The ERD is look relatively simple and this is no doubt due to the fact of only one administrator/seller. With all other gems installed the ERD is ofcourse more complex.
 ![Glowing Moth Marketplace ERD](docs/ERD.png)
 
 ## R15 - Explain the different high-level components (abstractions) in your app<br>
+The Glowing Moth Marketplace App:<br>
+
+**Registration** - The markeplace requires user to register by creating an account in order to purchase any assets.<br>
+
+**User Roles** - Allows for different user roles where you may set any user to be an administrator and or customer. Different roles will prevent customers from seeing uneeded data as well as confidential data to maintain data integrity.<br>
+
+**Asset Uploading** - As an admin you can upload assets and attach a file for download once a user purchases the asset. You also have the option to edit the asset or remove it from the marketplace<br>
+
+**Customer Records** - Allow you to see infomation related to their purchases like the date, the asset and price ect.<br>
+
+**Payments** - Using Stripe the marketplace allows payments to be made and generate income from a business perspective.<br>
+
+**Purchase History** - Customers can view there own purchase history for their own convinience.<br>
+
 
 ## R16 - Detail any third party services that your app will use<br>
 - Amazon Web Services S3 - To store dynamic images that a uploaded for each asset, the app uses an S3 bucket provided by AWS.
@@ -75,10 +90,9 @@ belongs_to :user
   belongs_to :asset<br>
 
 ## R18 - Discuss the database relations to be implemented in your application<br>
-
+When a user signs up they have the ability to puchase many assets and make many purchases.<br>
+Each created asset has many images and A zip file attachment. When a purchase is made it will belong to the user and asset. This allows the database to keep track of the user interactions within the markeplace. By using rolify and having an admin certain parts of the database relations become invisible to customers based on roles and authorisation.  
 ## R19 - Provide your database schema design<br>
-
-**This is a summary of the database schema**
 
 **active_storage_attachments table**<br>
 This allows the storing of the images and includes a foreign key to the blobs table that also works to store images/files.
@@ -129,6 +143,7 @@ This holds each user both admin and all cutomer data.
 - password<br>
 
 ## R20 - Describe the way tasks are allocated and tracked in your project<br>
+[Link to task allocation - Trello ](https://trello.com/b/lYxoCzz8/market-place-app)<br>
 Project managment and task allocation utilised Trello where I broke things down into documentation, user stories, to do, do and done. I also found it helpful to implement colour coded labels to get a nice quick visual idea of priority tasks like MVP's.<br>
 <br>
 The first thing I began doing was to list things that needed to be done like starting the documentation and creatiin user stories as well as seting up a repository etc.
