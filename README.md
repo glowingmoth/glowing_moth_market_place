@@ -52,8 +52,12 @@ Glowing Moth Maketplace App Screenshots
 ## R15 - Explain the different high-level components (abstractions) in your app<br>
 
 ## R16 - Detail any third party services that your app will use<br>
-- Amazon Web Services S3
-- Stripe
+- Amazon Web Services S3 - To store dynamic images that a uploaded for each asset, the app uses an S3 bucket provided by AWS.
+- Stripe - For processing payments Stripe is used to take care of everything in terms of the payment platform and security. It off a complete payment infrastructure with analytics etc.
+- Devise - Was chosen to simplify the need for user authentication by coming mostly prebuilt with sign up, sign in sign out etc. Devise has everything needed and universally used on the internet regarding authenticating users.
+- Rolify - Provids the ability to set roles for each user. In the case of the market place, there was one seller/admin which can be set in rolify. This made it simple to set authorisations for users based on role.
+- CanCan - Was actually used to set authorisations for the different users as set out by Rolify. 
+
 
 ## R17 - Describe your projects models in terms of the relationships (active record associations) they have with each other<br>
 
