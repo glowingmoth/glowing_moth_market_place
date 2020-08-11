@@ -91,7 +91,7 @@ belongs_to :user
 
 ## R18 - Discuss the database relations to be implemented in your application<br>
 When a user signs up they have the ability to puchase many assets and make many purchases.<br>
-Each created asset has many images and A zip file attachment. When a purchase is made it will belong to the user and asset. This allows the database to keep track of the user interactions within the markeplace. By using rolify and having an admin certain parts of the database relations become invisible to customers based on roles and authorisation.  
+Each created asset has many images and A zip file attachment. When a purchase is made it will belong to the user and asset. Both assets and purchase will belong to a user. This allows the database to keep track of the user interactions within the markeplace. By using rolify and having an admin certain parts of the database relations become invisible to customers based on roles and authorisation.  
 ## R19 - Provide your database schema design<br>
 
 **active_storage_attachments table**<br>
