@@ -60,6 +60,19 @@ Glowing Moth Maketplace App Screenshots
 
 
 ## R17 - Describe your projects models in terms of the relationships (active record associations) they have with each other<br>
+- User<br> 
+has_many :purchases<br>
+has_many :assets, dependent: :destroy<br>
+
+- Asset<br>
+belongs_to :user
+    has_many :purchases, dependent: :destroy<br>
+    has_many_attached :pictures<br>
+    has_one_attached :zip_file<br>
+    
+- Purchase<br>
+  belongs_to :user<br>
+  belongs_to :asset<br>
 
 ## R18 - Discuss the database relations to be implemented in your application<br>
 
