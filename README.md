@@ -20,11 +20,11 @@ Glowing Moth Marketplace App Sitemap
 
 - **Screenshots**<br>
 Glowing Moth Marketplace App Screenshots
-![Glowing Moth Marketplace Screenshots](docs/Screenshot_Assets_Index.png)
-![Glowing Moth Marketplace Screenshots](docs/Screenshot_Assets_Show.png)
-![Glowing Moth Marketplace Screenshots](docs/Screenshot_Customer_Records.png)
-![Glowing Moth Marketplace Screenshots](docs/Screenshot_Purchase_History.png)
-![Glowing Moth Marketplace Screenshots](docs/Screenshot_Upload_Asset.png)
+![Glowing Moth Marketplace Screenshots](docs/Screenshot_Assets_Index.PNG)
+![Glowing Moth Marketplace Screenshots](docs/Screenshot_Assets_Show.PNG)
+![Glowing Moth Marketplace Screenshots](docs/Screenshot_Customer_Records.PNG)
+![Glowing Moth Marketplace Screenshots](docs/Screenshot_Purchase_History.PNG)
+![Glowing Moth Marketplace Screenshots](docs/Screenshot_Upload_Asset.PNG)
 
 - **Target audience** - This marketplace app is aimed at professional independent game developers or any other professionals in realtime computer graphics needing 3d assets for their projects. It's also aimed at hobbyists.
 - **Tech stack** - HTML, CSS, Bootstrap, Ruby, Ruby on Rails, Javascript, Amazon Web Services S3, Heroku, Visual Studio Code, Figma, Lucid Charts, Stripe, Git, Github.
@@ -44,7 +44,7 @@ Glowing Moth Marketplace App Screenshots
 ## R13 - Wireframes for your app<br>
 [Link to Glowing Moth Marketplace App Wireframes - Figma](https://www.figma.com/file/aN7PX0cA94nccgUNs46Y7x/Market-Place-Web-App?node-id=0%3A1)
 
-![Glowing Moth Marketplace Screenshots](docs/Wireframe.png)
+![Glowing Moth Marketplace Screenshots](docs/Wireframe.PNG)
 
 ## R14 - An ERD for your app<br>
 The ERD is look relatively simple and this is no doubt due to the fact of only one administrator/seller. With all other gems installed the ERD is of course more complex.
@@ -147,19 +147,19 @@ This holds each user both admin and all customer data.
 Project management and task allocation utilised Trello where I broke things down into documentation, user stories, to do, do and done. I also found it helpful to implement colour coded labels to get a nice quick visual idea of priority tasks like MVP's.<br>
 <br>
 The first thing I began doing was to list things that needed to be done like starting the documentation and creating user stories as well as seting up a repository etc.
-![Glowing Moth Marketplace - Trello](docs/Trello_1.png)
+![Glowing Moth Marketplace - Trello](docs/Trello_1.PNG)
 <br>
 <br>
 
 Next I continued to refine my ideas and ERD and sitemaps as well as starting to lay down the the basic source code for each model in the ERD. This was also the point where site layout and bootsrap were worked on.
-![Glowing Moth Marketplace - Trello](docs/Trello_2.png)
+![Glowing Moth Marketplace - Trello](docs/Trello_2.PNG)
 <br>
 <br>
 
 Around this point I started to get an idea of scope and what features that were originally planned for the app were mostly likley not going to make it into the final product. I managed to implement several gems that helped with authentication authorisation, payments and image uploads etc. 
-![Glowing Moth Marketplace - Trello](docs/Trello_3.png)
+![Glowing Moth Marketplace - Trello](docs/Trello_3.PNG)
 <br>
 <br>
 
 The final touches were things like validations and small tweaks here and there along with deployment to heroku. The last thing was to fill the database with fake users and complete the README.
-![Glowing Moth Marketplace - Trello](docs/Trello_4.png)
+![Glowing Moth Marketplace - Trello](docs/Trello_4.PNG)
