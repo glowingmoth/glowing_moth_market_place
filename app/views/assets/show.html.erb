@@ -10,7 +10,7 @@
           <%= image_tag pic %>
         <% end %>
       </div>
-      <div id="small-images" class="mb-5" >
+      <div id="small-images" class="mb-1" >
         <% @asset.pictures.each do |pic| %>
           <%= link_to "#" do %>
             <%= image_tag pic, width: 80, class: "mt-2" %>
@@ -18,7 +18,7 @@
         <% end %>
       </div>
     </div>
-    <div class="col-12 col-lg-4 mt-5 pt-4">
+    <div class="col-12 col-lg-4 mt-2 pt-2">
       <p>
         <strong>Price:</strong>
       </p>
