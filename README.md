@@ -78,4 +78,54 @@ belongs_to :user
 
 ## R19 - Provide your database schema design<br>
 
+**This is a summary of the database schema**
+
+**active_storage_attachments table**<br>
+This allows the storing of the images and includes a foreign key to the blobs table that also works to store images/files.
+- name
+- record_type
+- record_id
+- blob_id
+
+**active_storage_blobs table**<br>
+Works with active storage.
+- key 
+- filename
+- content_type
+- byte_size
+- checksum
+
+**assets table**<br>
+The assets table holds all info related to the asset that a customer can see on both the index and show page.
+- title
+- description
+- content
+- price
+- user_id
+- image
+
+**purchases table**<br>
+When a purchase is made this data is recorded and stored to allow for the admin to see customer records and customers to see their purchase history.
+- date
+- user_id
+- asset_id
+- price
+
+**roles table**<br> 
+Works in conjunction with the users_roles table to set user roles.
+- name
+- resource_type
+- resource_id
+
+**users_roles_table**
+Works with roles table to set user roles using the foreign keys.
+- user_id
+- role_id
+
+**users table**<br>
+This holds each user both admin and all cutomer data.
+- name
+- email 
+- password<br>
+
 ## R20 - Describe the way tasks are allocated and tracked in your project<br>
